@@ -94,7 +94,7 @@ def create_bike_weather_df(bike_df):
     return bike_weather_df
 
 
-bike_df = pd.read_csv("dashboard/bike.csv")
+bike_df = pd.read_csv("bike.csv")
 bike_df["dteday"] = pd.to_datetime(bike_df["dteday"])
 mounthly_bike_df = create_mounthly_bike_df(bike_df)
 bike_sesional_df = craete_bike_sesional_df(bike_df)
@@ -118,7 +118,7 @@ ax.plot(
     mounthly_bike_df["total_all_rent"],
     marker='o', 
     linewidth=2,
-    color="#90CAF9"
+    color="#0057e7"
 )
  
 st.pyplot(fig)
@@ -135,7 +135,7 @@ ax.plot(
     mounthly_bike_df["total_casual_rent"],
     marker='o', 
     linewidth=2,
-    color="#90CAF9"
+    color="#0057e7"
 )
  
 st.pyplot(fig)
@@ -153,7 +153,7 @@ ax.plot(
     mounthly_bike_df["total_casual_rent"],
     marker='o', 
     linewidth=2,
-    color="#90CAF9"
+    color="#0057e7"
 )
  
 st.pyplot(fig)
@@ -163,7 +163,7 @@ st.subheader("The Season When Most People Rent Bike")
 
 fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(60, 16))
  
-colors = ["#72BCD4", "#D3D3D3", "#D3D3D3", "#D3D3D3"]
+colors = ["#72BCD4", "#8c8d8f", "#8c8d8f", "#8c8d8f"]
  
 sns.barplot(y="total_registered_rent", x="season", data=bike_sesional_df, palette=colors, ax=ax[0])
 ax[0].set_ylabel(None)
@@ -191,7 +191,7 @@ st.subheader("The Time When Most People Rent Bike")
 
 fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(60, 16))
  
-colors = ["#72BCD4", "#D3D3D3", "#D3D3D3", "#D3D3D3"]
+colors = ["#72BCD4", "#8c8d8f", "#8c8d8f", "#8c8d8f"]
  
 sns.barplot(y="total_registered_rent", x="time", data=bike_time_df.sort_values(by="total_registered_rent", ascending=False), palette=colors, ax=ax[0])
 ax[0].set_ylabel(None)
@@ -218,7 +218,7 @@ st.subheader("The Day When Most People Rent Bike")
 
 fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 5))
  
-colors = ["#72BCD4", "#D3D3D3", "#D3D3D3"]
+colors = ["#72BCD4", "#8c8d8f", "#8c8d8f"]
  
 sns.barplot(y="total_all_rent", x="workingday", data=bike_weeked_df.sort_values(by="total_all_rent", ascending=False), palette=colors, ax=ax)
 ax.set_ylabel(None)
@@ -231,7 +231,7 @@ st.pyplot(fig)
 st.subheader("The Weather When Most People Rent Bike")
 fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 5))
  
-colors = ["#72BCD4", "#D3D3D3", "#D3D3D3", "#D3D3D3"]
+colors = ["#72BCD4", "#8c8d8f", "#8c8d8f", "#8c8d8f"]
  
 sns.barplot(y="total_all_rent", x="weather", data=bike_weather_df.sort_values(by="total_all_rent", ascending=False), palette=colors, ax=ax)
 ax.set_ylabel(None)
