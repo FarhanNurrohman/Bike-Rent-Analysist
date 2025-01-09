@@ -1,4 +1,4 @@
-# Proyek Analisis Data: Bike Sharing Dataset
+# Data Analysty Project: Bike Sharing Dataset
 ## Bike Rental Data Analysis and Interactive Dashboard Using Streamlit
 This project focuses on analyzing bike rental data to uncover patterns, trends, and insights related to bike-sharing services. An interactive dashboard built with Streamlit allows users to dynamically explore the data and visualize key metrics for decision-making.
 
